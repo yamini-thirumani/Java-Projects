@@ -85,7 +85,12 @@ class Calculator {
                 if (b == 0) throw new ArithmeticException("Division by zero");
                 operands.push(a / b); 
                 break;
-            case '%': operands.push(a % b); break;
+
+            case '%': 
+                if (b == 0) throw new ArithmeticException("Modulo by zero");
+                operands.push(a % b); 
+                break;
+
             default: throw new IllegalArgumentException("Invalid operator");
         }
     }
